@@ -10,7 +10,7 @@ export class TarefaService {
   constructor() { }
 
   listarTodos(): Tarefa[]{
-    const tarefas = localStorage.['tarefas'];
+    const tarefas = localStorage['tarefas'];
     return tarefas ? JSON.parse(tarefas) : [];
   }
 
@@ -24,6 +24,13 @@ export class TarefaService {
   buscarPorId(id: number): Tarefa{
     const tarefas: Tarefa[] = this.listarTodos();
     return tarefas.find(tarefa => tarefa.id === id);
+  }
+
+  atualizar(tarefa: Tarefa): void{
+    const tarefas: Tarefa[] = this.listarTodos();
+    tarefas.forEach(obj, index, objs){
+
+    }
   }
 
 }
